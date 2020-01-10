@@ -5,6 +5,6 @@ class Fruta {
     }
 }
 
-var manga = new fruta("manga", "2.0");
+var manga = new Fruta("manga", "2.0");
 
 console.log(manga)

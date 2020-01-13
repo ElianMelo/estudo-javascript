@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso JavaScript</title>
+    </head>
+    <body>
+        <div id="app">
+            <input id="nome"/>
+        </div>
+
+        <script>
+            // Cria um elemento com a tag a que representa um link
+            var linkElement = document.createElement("a");
+
+            // Altera os atributos de nosso link
+            linkElement.setAttribute("href", "http://rocketseat.com.br");
+            linkElement.setAttribute("title", "Site da Rocketseat");
+
+            // Cria um texto que será adicionado ao link
+            var textElement = document.createTextNode("Acessar site da Rocketseat");
+
+            // Adiciona o texto como um "filho" de nosso link
+            linkElement.appendChild(textElement);
+
+            // Busca o container principal e adicionar nosso link
+            var containerElement = document.querySelector("#app");
+            containerElement.appendChild(linkElement);
+
+            // Remove o input que adicionamos em nosso HTML
+            var inputElement = document.querySelector("#nome");
+            containerElement.removeChild(inputElement);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso JavaScript</title>
+    </head>
+    <body>
+        <div id="app">
+            <ul id="lista"></ul>
+            <input type="text" name="nome">
+            <button onClick="adicionar()">Adicionar</button>
+        </div>
+
+        <script>
+            /*
+            Seguindo o resultado do exercício anterior adicione um input em tela e um botão como a seguir:
+            Ao clicar no botão, a função adicionar() deve ser disparada adicionando um novo item a lista de
+            nomes baseado no nome preenchido no input e renderizando o novo item em tela juntos aos
+            demais itens anteriores. Além disso, o conteúdo do input deve ser apagado após o clique.
+            */
+            var nomes = ["Diego", "Gabriel", "Lucas"];
+
+            var lista = document.querySelector("#lista");
+
+            function criarElemento(nome){
+                var item = document.createElement("li");
+                var valor = document.createTextNode(nome);
+                item.appendChild(valor);
+                lista.appendChild(item);
+            }
+
+            for(var nome of nomes){
+                criarElemento(nome);
+            }
+
+            function adicionar(){
+                var novoItem = document.querySelector("input[name=nome]");
+                criarElemento(novoItem.value);
+                novoItem.value = null;
+            }
+        </script>
+    </body>
+</html>

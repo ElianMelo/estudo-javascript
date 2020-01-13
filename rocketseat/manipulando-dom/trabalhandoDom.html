@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso JavaScript</title>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" id="nome" class="nome" name="nome"/>
+            <button class="botao">Me pressione</button>
+        </div>
+
+        <script>
+            // Todas essas são formas de se referir a um mesmo elemento
+            var inputElement = document.getElementById("nome");
+            var inputElement = document.getElementsByTagName("input");
+            var inputElement = document.getElementsByClassName("nome");
+            var inputElement = document.querySelector("div#app input");
+            var inputElement = document.querySelector("input");
+            var inputElement = document.querySelector("input[name=nome]");
+            console.log(inputElement);
+
+            // Busca o botão de classe botao
+            var btnElement = document.querySelector("button.botao");
+            // Adiciona a esse elemento o evento onclick que demonstra a mensagem digitada
+            btnElement.onclick = function(){
+                var text = inputElement.value;
+                alert(text);
+            }
+        </script>
+    </body>
+</html>

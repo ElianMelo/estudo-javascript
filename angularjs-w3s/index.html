@@ -1,14 +1,33 @@
 <html ng-app="app">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8"/>
         <script src="./config/angular.min.js"></script>
+        <script src="./config/angular-route.min.js"></script>
         <script src="./config/app.js"></script>
         <script src="./controllers/control.js"></script>
+        <script src="./directives/navbar.js"></script>
         <title>Estudo AngularJS</title>
     </head>
     <body>
         <div ng-controller="control">
-            <h1>{{helloWorld}}</h1>
+            <navbar></navbar>
+            <h1 ng-bind="mensagem"></h1>
+
+            <label>Altera Título: </label>
+            <input type="text" ng-model="text">
+            <button ng-click="alterar()">Alterar</button>
+            <br>
+
+            <label>Adiciona Item: </label>
+            <input type="text" ng-model="item">
+            <button ng-click="adicionar()">Adicionar</button>
+
+            <ul>
+                <li ng-repeat="nome in nomes"> {{nome}} </li>
+            </ul>
+
+            <h2>Rotas</h2>
+            <ng-view></ng-view>
         </div>
     </body>
 </html>

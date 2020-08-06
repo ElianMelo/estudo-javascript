@@ -1,8 +1,10 @@
 import express from 'express';
+import cors from 'cors';
 import routes from './database/routes';
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 // http://localhost:3333/users

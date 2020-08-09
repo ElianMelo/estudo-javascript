@@ -8,6 +8,7 @@ import { Feather } from '@expo/vector-icons'
 import AsyncStorage from '@react-native-community/async-storage';
 
 import styles from './styles';
+import { useFocusEffect } from '@react-navigation/native';
 
 function TeacherList() {
     const [isFiltersVisible, setIsFiltersVisible] = useState(false);
@@ -29,6 +30,10 @@ function TeacherList() {
             }
         });
     }
+
+    useFocusEffect(() => {
+        loadFavorites();
+    });
 
     function handleToggleFiltersVisible() {
         setIsFiltersVisible(!isFiltersVisible);
